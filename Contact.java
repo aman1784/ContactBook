@@ -48,19 +48,7 @@ public class Contact {
             ResultSet resultSet = preparedStatement.executeQuery();
             viewData(resultSet);
 
-            //Intead of writing it in each and every methods, better to make a single method viewData() and call to display results
-            /*System.out.println("==== CONTACTS ====");
-            System.out.println("+-----+--------------------+--------------+---------------------------+");
-            System.out.println("| ID  |   NAME             |   NUMBER     |   EMAIL ID                |");
-            System.out.println("+-----+--------------------+--------------+---------------------------+");
-            while (resultSet.next()){
-                int id = resultSet.getInt("id");
-                String name = resultSet.getString("name");
-                String number = resultSet.getString("phoneNumber");
-                String email = resultSet.getString("emailId");
-                System.out.printf("|  %-2s |   %-16s |  %-12s|  %-22s   |\n", id, name, number, email);
-                System.out.println("+-----+--------------------+--------------+---------------------------+");
-            }*/
+        
         }catch (SQLException e){
             e.printStackTrace();
         }
@@ -72,17 +60,9 @@ public class Contact {
         String findName = scanner.nextLine();
         String query = "SELECT * FROM contactBook WHERE name LIKE ?";
 
-        //This version is not using try-with-resources
-//        try{
-//            PreparedStatement preparedStatement = connection.prepareStatement(query);
-//            preparedStatement.setString(1, "%"+findName+"%");
-//            ResultSet resultSet = preparedStatement.executeQuery();
-//            viewData(resultSet);
-//        } catch (SQLException e){
-//            e.printStackTrace();
-//        }
+        
 
-        // In this version, the PreparedStatement and ResultSet are declared within the parentheses of the
+        // PreparedStatement and ResultSet are declared within the parentheses of the
         // try-with-resources statement. Java will automatically close these resource when the try block
         // is exited, whether normally or due to an exception. This helps in reducing boilerplate code for resource management.
         try (
