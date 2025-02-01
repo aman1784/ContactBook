@@ -1,7 +1,7 @@
 # Contact Book Application
 
 ## Overview
-This is a simple Contact Book application built in Java using JDBC to interact with a MySQL database. The application allows users to manage their contacts by adding, viewing, and searching contacts by name or number.
+This is a simple Contact Book application built in Java using JDBC to interact with a MySQL database. The application allows users to manage their contacts by adding, viewing, and searching contacts by name or number. This project is made to learn the basic CRUD operations.
 
 ## Features
 - Add new contacts
